@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Gabriela|Nixie+One|Prata');
+.adga-bg-color {
+    background-color: #3875A4;
+}
+
+.adga-logo-font {
+    font-family: 'Prata', serif;
+    /*
+    font-family: 'Gabriela', serif;
+    font-family: 'Nixie One', cursive;
+    */
+}
