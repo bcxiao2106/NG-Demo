@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiderNavComponent implements OnInit {
 
+  isCollapsed: Boolean = false;
+  sidebarCollpaseClass: String = 'sidebar';
   constructor() { }
 
   ngOnInit() {
   }
 
+  public navbarCollapse(): void {
+    this.sidebarCollpaseClass = 'sidebar-collapsed';
+    this.isCollapsed = true;
+  }
+
+  public navbarExpand(): void {
+    this.sidebarCollpaseClass = 'sidebar';
+    this.isCollapsed = false;
+  }
 }
