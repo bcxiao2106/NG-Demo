@@ -1,12 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css?family=Gabriela|Nixie+One|Prata');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Titillium+Web');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html,
 body {
     height: 100%;
     padding: 0;
     margin: 0;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .adga-bg-color {
@@ -15,10 +16,6 @@ body {
 
 .adga-logo-font {
     font-family: 'Prata', serif;
-    /*
-    font-family: 'Gabriela', serif;
-    font-family: 'Nixie One', cursive;
-    */
 }
 
 .dash-container {
@@ -46,6 +43,7 @@ body {
 }
 
 .main {
+    margin-top: 56px;
     -ms-flex: 1;
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -75,12 +73,12 @@ body {
 
 .sidebar-menu {
     background: rgb(54, 54, 54);
-    color: whitesmoke;
+    color: rgb(194, 194, 194);
     border-bottom: 1px solid rgb(70, 70, 70);
     outline: 0px;
-    font-size: 14px;
-    height: 50px;
-    line-height: 50px;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
     padding-left: 15px;
 }
 
@@ -95,8 +93,8 @@ div.sidebar-menu:hover {
     border-bottom: 1px solid rgb(175, 175, 175);
     outline: 0px;
     font-size: 12px;
-    height: 40px;
-    line-height: 40px;
+    height: 30px;
+    line-height: 30px;
     padding-left: 30px;
 }
 
@@ -120,7 +118,11 @@ div.sidebar-collapse-btn:hover {
 
 .sidebar-menu-icon {
     margin-right: 10px;
-    font-size: 16px;
+    font-size: 10px;
+}
+
+.material-icons.md-12 {
+    font-size: 12px;
 }
 
 .material-icons.md-14 {

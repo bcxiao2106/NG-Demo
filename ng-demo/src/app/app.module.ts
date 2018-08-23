@@ -23,10 +23,6 @@ import {HttpClientModule} from '@angular/common/http';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-  //   const resourcePath = 'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.svg';
-  //   matIconRegistry.addSvgIcon('iconName', domSanitizer.bypassSecurityTrustResourceUrl(resourcePath));
-  // }
 
   constructor() {
   }

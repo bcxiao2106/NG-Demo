@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { MatIconRegistry } from '@angular/material';
-import { DomSanitizer } from '@angular/platform-browser';
+import { MENUS } from './core/mocks/mock-menu';
+import { Menu } from './shared/models/Menu';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +9,5 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'app';
+  sidebarDataSource: Menu[] = MENUS;
 }

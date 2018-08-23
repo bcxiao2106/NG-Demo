@@ -5,63 +5,26 @@
     <div class="sidebar-collapse-btn" *ngIf="!isCollapsed" (click)="navbarCollapse()">
         <i class="material-icons" style="margin-left: 200px;">chevron_left</i>
     </div>
-    <div class="sidebar-menu" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <i class="material-icons sidebar-menu-icon">account_balance</i>
-        <a *ngIf="!isCollapsed">sidebar-menu 1</a>
-    </div>
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#sideNavBar" *ngIf="!isCollapsed">
-        <div class="sidebar-submenu">sidebar-submenu 1.1</div>
-        <div class="sidebar-submenu">sidebar-submenu 1.2</div>
-        <div class="sidebar-submenu">sidebar-submenu 1.3</div>
-        <div class="sidebar-submenu">sidebar-submenu 1.4</div>
-        <div class="sidebar-submenu">sidebar-submenu 1.5</div>
-    </div>
 
-    <div class="sidebar-menu" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-        <i class="material-icons sidebar-menu-icon">assessment</i>
-        <a *ngIf="!isCollapsed">sidebar-menu 2</a>
-    </div>
-    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#sideNavBar" *ngIf="!isCollapsed">
-        <div class="sidebar-submenu">sidebar-submenu 2.1</div>
-        <div class="sidebar-submenu">sidebar-submenu 2.2</div>
-        <div class="sidebar-submenu">sidebar-submenu 2.3</div>
-        <div class="sidebar-submenu">sidebar-submenu 2.4</div>
-        <div class="sidebar-submenu">sidebar-submenu 2.5</div>
-    </div>
-
-    <div class="sidebar-menu" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-        <i class="material-icons sidebar-menu-icon">assignment_ind</i>
-        <a *ngIf="!isCollapsed">sidebar-menu 3</a>
-    </div>
-    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#sideNavBar" *ngIf="!isCollapsed">
-        <div class="sidebar-submenu">sidebar-submenu 3.1</div>
-        <div class="sidebar-submenu">sidebar-submenu 3.2</div>
-        <div class="sidebar-submenu">sidebar-submenu 3.3</div>
-        <div class="sidebar-submenu">sidebar-submenu 3.4</div>
-        <div class="sidebar-submenu">sidebar-submenu 3.5</div>
-    </div>
-
-    <div class="sidebar-menu" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-        <i class="material-icons sidebar-menu-icon">donut_small</i>
-        <a *ngIf="!isCollapsed">sidebar-menu 4</a>
-    </div>
-    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#sideNavBar" *ngIf="!isCollapsed">
-        <div class="sidebar-submenu">sidebar-submenu 4.1</div>
-        <div class="sidebar-submenu">sidebar-submenu 4.2</div>
-        <div class="sidebar-submenu">sidebar-submenu 4.3</div>
-        <div class="sidebar-submenu">sidebar-submenu 4.4</div>
-        <div class="sidebar-submenu">sidebar-submenu 4.5</div>
-    </div>
-
-    <div class="sidebar-menu" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
-        <i class="material-icons sidebar-menu-icon">grade</i>
-        <a *ngIf="!isCollapsed">sidebar-menu 5</a>
-    </div>
-    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#sideNavBar" *ngIf="!isCollapsed">
-        <div class="sidebar-submenu">sidebar-submenu 5.1</div>
-        <div class="sidebar-submenu">sidebar-submenu 5.2</div>
-        <div class="sidebar-submenu">sidebar-submenu 5.3</div>
-        <div class="sidebar-submenu">sidebar-submenu 5.4</div>
-        <div class="sidebar-submenu">sidebar-submenu 5.5</div>
+    <div *ngFor="let menu of sidebarDataSource">
+        <div class="sidebar-menu" data-toggle="collapse" [attr.data-target]="'#collapse' + menu.menuId" aria-expanded="true" [attr.aria-controls]="'#collapse' + menu.menuId">
+            <i class="material-icons md-18 sidebar-menu-icon">{{ menu.iconName }}</i>
+            <a *ngIf="!isCollapsed">{{ menu.menuName }}</a>
+            <!-- <div class="btn-group dropright">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropright</span>
+                    </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div> -->
+        </div>
+        <div [id]="'collapse' + menu.menuId" class="collapse" [attr.aria-labelledby]="'heading' + menu.menuId" data-parent="" *ngIf="!isCollapsed">
+            <div *ngFor="let item of menu.items" class="sidebar-submenu">
+                {{ item.itemName }}
+            </div>
+        </div>
     </div>
 </div>
